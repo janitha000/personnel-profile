@@ -294,14 +294,60 @@ export default function Home() {
             
             <div className={styles.grid}>
               {[
-                { title: "Mastering React Server Components", date: "Coming Soon" },
-                { title: "Building Scalable APIs with GraphQL", date: "Coming Soon" },
-                { title: "The Future of Web Performance", date: "Coming Soon" }
+                { 
+                  title: "Building Generative AI Applications Using AWS Bedrock", 
+                  date: "Jan 17, 2025",
+                  link: "https://janitha000.medium.com/building-generative-ai-applications-using-aws-bedrock-c42c4e646302"
+                },
+                { 
+                  title: "Lambda Function URLs Vs API Gateway", 
+                  date: "Jul 22, 2024",
+                  link: "https://janitha000.medium.com/lambda-function-urls-vs-api-gateway-ec6730456303"
+                },
+                { 
+                  title: "Subdomains with CloudFront", 
+                  date: "Mar 04, 2024",
+                  link: "https://janitha000.medium.com/subdomains-with-cloudfront-5723b683c724"
+                },
+                { 
+                  title: "Custom URL Shortener Using AWS S3", 
+                  date: "Jul 07, 2023",
+                  link: "https://janitha000.medium.com/custom-url-shortener-using-aws-s3-8f3f23af02d2"
+                },
+                { 
+                  title: "Using AWS RDS Proxy on Lambda with a Shared Connection Pool", 
+                  date: "Aug 19, 2022",
+                  link: "https://levelup.gitconnected.com/using-aws-rds-proxy-with-lambda-with-a-shared-connection-pool-88407be71425"
+                },
+                { 
+                  title: "Automate Cross Account CloudFormation Deployment using AWS CodePipeline", 
+                  date: "Jun 08, 2022",
+                  link: "https://levelup.gitconnected.com/automate-cross-account-cloudformation-deployment-using-aws-codepipeline-c71d81b45722"
+                },
+                { 
+                  title: "REST API Development — Best Practices", 
+                  date: "Jun 23, 2021",
+                  link: "https://janitha000.medium.com/rest-api-development-best-practices-8184d652bc47"
+                },
+                { 
+                  title: "GraphQL — Common Disadvantages Over REST and Solutions to Overcome them", 
+                  date: "Jun 15, 2021",
+                  link: "https://levelup.gitconnected.com/graphql-common-disadvantages-over-rest-and-solutions-to-overcome-them-70cbaca42a44"
+                },
+                { 
+                  title: "GraphQL — Code First(Resolver-First) using TypeGraphQL and typegoose", 
+                  date: "Jun 07, 2021",
+                  link: "https://medium.com/data-science/graphql-code-first-resolver-first-using-typegraphql-and-typegoose-747616223786"
+                },
+                { 
+                  title: "Speech to Text using AWS Transcribe, S3 and Lambda", 
+                  date: "Feb 18, 2021",
+                  link: "https://medium.com/data-science/speech-to-text-using-aws-transcribe-s3-and-lambda-a6e88fb3a48e"
+                }
               ].map((article, i) => (
-                <motion.a 
+                <a 
                   key={i} 
-                  variants={fadeInUp} 
-                  href="https://www.janithatennakoon.com/"
+                  href={article.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`glass-panel ${styles.articleCard}`}
@@ -311,7 +357,7 @@ export default function Home() {
                     <span className={styles.date}>{article.date}</span>
                   </div>
                   <ArrowRight className={styles.articleIcon} />
-                </motion.a>
+                </a>
               ))}
             </div>
           </motion.div>
