@@ -234,6 +234,12 @@ export default function Home() {
             <div className={styles.grid}>
               {[
                 {
+                  title: "Autonomous Multi-Agent Workflow Engine",
+                  desc: "An autonomous multi-agent task execution and planning engine built in Python using LangGraph. Orchestrates hierarchical agent workflows comprising Planner, Worker, and Evaluator agents, featuring Human-in-the-loop (HITL) verification and automated GitHub integration.",
+                  tech: ["Python", "LangGraph", "Docker", "Astral UV", "AI Agents"],
+                  link: "https://github.com/janitha000/-Autonomous-Multi-Agent-Workflow-Engine"
+                },
+                {
                   title: "Calorie Counter",
                   desc: "A responsive calorie tracking application built with Next.js and React. Features dashboard logs, nutritional trackers, and custom goal settings.",
                   tech: ["Next.js", "React", "TypeScript", "Vercel"],
