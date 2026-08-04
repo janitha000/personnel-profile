@@ -150,11 +150,8 @@ export default function Home() {
               Engineering Lead & Senior Full-Stack Engineer with extensive experience building scalable web applications and guiding technical teams. Specialized in Node.js, Angular, .NET, Next.js, and React, with complete end-to-end SDLC ownership—from initial stakeholder alignment and system design to delivery, release, and post-launch maintenance. Based in Sri Lanka, I bridge technical execution with human-centric design to build seamless, high-performance digital experiences.
             </p>
             <div className={styles.actions}>
-              <a href="#projects" className="btn btn-primary">
-                View My Work <ArrowRight size={18} style={{ marginLeft: 8 }} />
-              </a>
-              <a href="https://github.com/janitha000" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-                <GithubIcon size={18} style={{ marginRight: 8 }} /> GitHub
+              <a href="https://github.com/janitha000" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                <GithubIcon size={18} style={{ marginRight: 8 }} /> GitHub Profile
               </a>
               <a href="https://www.linkedin.com/in/janithatennakoon/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                 <LinkedinIcon size={18} style={{ marginRight: 8 }} /> LinkedIn
