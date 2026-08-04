@@ -237,31 +237,37 @@ export default function Home() {
             <div className={styles.grid}>
               {[
                 {
-                  title: "amplify-react-sample",
-                  desc: "A sample application showcasing AWS Amplify integration with React.",
-                  tech: ["JavaScript", "React", "AWS Amplify"],
-                  link: "https://github.com/janitha000/amplify-react-sample"
+                  title: "Calorie Counter",
+                  desc: "A responsive calorie tracking application built with Next.js and React. Features dashboard logs, nutritional trackers, and custom goal settings.",
+                  tech: ["Next.js", "React", "TypeScript", "Vercel"],
+                  link: "https://github.com/janitha000/calorie-counter"
                 },
                 {
-                  title: "graphql-typescript-fullstack",
-                  desc: "A fullstack starter featuring GraphQL, TypeScript, and modern tooling.",
-                  tech: ["TypeScript", "GraphQL", "Node.js"],
-                  link: "https://github.com/janitha000/graphql-typescript-fullstack"
+                  title: "Jira Dashboard",
+                  desc: "An interactive visual dashboard for tracking Jira sprints, tickets, and team velocity. Offers real-time sprint metrics and drag-and-drop workflow status updates.",
+                  tech: ["React", "Node.js", "Jira API", "CSS Modules"],
+                  link: "https://github.com/janitha000/jira-dashboard"
                 },
                 {
-                  title: "CanopyBasedER",
-                  desc: "An Entity Resolution project built in Java using Canopy clustering.",
-                  tech: ["Java", "Algorithms"],
-                  link: "https://github.com/janitha000/CanopyBasedER"
+                  title: "Financial Dashboard",
+                  desc: "A clean, modern financial analytics dashboard visualizing transaction logs, balances, and asset distributions with custom chart layouts.",
+                  tech: ["Next.js", "React", "Geist Sans", "Vercel"],
+                  link: "https://github.com/janitha000/fnancial-dashboard"
                 },
                 {
-                  title: "DesignPatterns.NET",
-                  desc: "Implementations of classic Design Patterns in C# .NET.",
-                  tech: ["C#", ".NET", "Architecture"],
-                  link: "https://github.com/janitha000/DesignPatterns.NET"
+                  title: "WebLLM Demo Package",
+                  desc: "A demonstration project integrating WebLLM to run Large Language Models locally in-browser. Leverages WebGPU acceleration and WebAssembly for private, local inference.",
+                  tech: ["TypeScript", "WebLLM", "WebGPU", "WebAssembly"],
+                  link: "https://github.com/janitha000/weblllm-demo-package"
+                },
+                {
+                  title: "Taxi Microservice",
+                  desc: "A backend microservice architecture for taxi booking and dispatch systems. Built with Node.js, featuring AWS SQS queue processing, Swagger documentation, and Docker containers.",
+                  tech: ["Node.js", "Express", "AWS SQS", "Docker", "Swagger"],
+                  link: "https://github.com/janitha000/TaxiMicroService-Nodejs"
                 }
               ].map((project, i) => (
-                <motion.div key={i} variants={fadeInUp} className={`glass-panel ${styles.card}`}>
+                <div key={i} className={`glass-panel ${styles.card}`}>
                   <h3>{project.title}</h3>
                   <p>{project.desc}</p>
                   <div className={styles.techTags}>
@@ -272,7 +278,7 @@ export default function Home() {
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
                     View Source <ExternalLink size={14} />
                   </a>
-                </motion.div>
+                </div>
               ))}
             </div>
           </motion.div>
