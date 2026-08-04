@@ -125,6 +125,43 @@
   padding: 24px;
 }
 
+.timelineContent {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.logoWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.companyLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.timelineBody {
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .timelineContent {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
 .timelineDot {
   position: absolute;
   left: -37px;
@@ -138,15 +175,58 @@
 
 .timelineItem h3 {
   font-size: 1.5rem;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+}
+
+.timelineHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.timelineCompany {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.timelineMeta {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
 }
 
 .timelineDate {
-  display: inline-block;
-  font-size: 0.9rem;
-  color: var(--accent-color);
   font-weight: 600;
+}
+
+.timelineLocation {
+  color: var(--text-secondary);
+}
+
+.timelineDesc {
+  line-height: 1.6;
+  color: var(--text-primary);
   margin-bottom: 16px;
+}
+
+.timelineTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.timelineTag {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: rgba(128, 128, 128, 0.05);
+  color: var(--text-secondary);
+  font-weight: 500;
+  border: 1px solid var(--border-color);
 }
 
 .grid {

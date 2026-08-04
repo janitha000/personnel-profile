@@ -55,6 +55,79 @@ export default function Home() {
     }
   };
 
+  const experiences = [
+    {
+      role: "Technical Lead",
+      company: "Random Software Ltd",
+      type: "Full-time",
+      duration: "Jun 2022 - Present · 4 yrs 3 mos",
+      location: "",
+      desc: "Tech Lead for BodyShop Booster, a multi-tenant SaaS platform serving automotive body shops across the US and Canada. Own end-to-end technical direction across the Angular frontends (CRM, DocWallet) and the Serverless AWS TypeScript API — from architecture and security to AI agent features and multi-site migrations. Hands-on leader who still ships: founding contributor and top committer on the API (~7,500 commits) with substantial ownership of CRM and DocWallet UI (1,700+ commits combined). Bridge product, engineering, and integrations to deliver reliable real-time UX, secure APIs, and production AI texting/voice flows.",
+      tags: ["Node.js", "Angular", "AWS Lambda", "MongoDB", "MySQL", "Serverless", "OpenAI", "AWS Bedrock", "LangChain/LangGraph", "MCP", "Twilio", "SendGrid", "Ably", "Mixpanel", "Sentry"],
+      logo: "/random_software.jpg"
+    },
+    {
+      role: "Technical Lead",
+      company: "99x",
+      type: "Full-time",
+      duration: "Sep 2021 - Jun 2022 · 10 mos",
+      location: "",
+      desc: "Architected and developed enterprise-grade software solutions using serverless stacks and micro-frontends.",
+      tags: [".NET 5", "Angular", "ReactJS", "NextJS", "Azure Functions", "CosmosDB", "Serverless", "Firebase", "Vercel"],
+      logo: "/99x.jpg"
+    },
+    {
+      role: "Associate Tech Lead",
+      company: ":Different",
+      type: "Full-time",
+      duration: "Jul 2021 - Nov 2021 · 5 mos",
+      location: "Sri Lanka",
+      desc: "Worked as the Tech Lead for the Money-In / Money-Out flows, managing transactions and financial features.",
+      tags: ["Node.js", "React.js", "MongoDB", "GraphQL", "AWS"],
+      logo: "/different.jpg"
+    },
+    {
+      role: "Senior Software Developer",
+      company: "Groupe Crédit Agricole",
+      type: "Full-time",
+      duration: "Sep 2019 - Jun 2021 · 1 yr 10 mos",
+      location: "Singapore",
+      desc: "Worked in the innovation team playing the role of Senior Software Developer / Lead Developer to develop AI-related applications that address bank's use cases. Performing end-to-end full stack development.",
+      tags: ["Node.js", "Angular", "Python", "MongoDB", "Neo4j", "RabbitMQ", "RedisGraph", "ElasticSearch"],
+      logo: "/credit_agricole.jpg"
+    },
+    {
+      role: "Associate Tech Lead",
+      company: "99X Technology",
+      type: "Full-time",
+      duration: "Feb 2019 - Sep 2019 · 8 mos",
+      location: "Sri Lanka",
+      desc: "Played the role of the lead technical developer in multiple customer projects with direct customer handling. Involved directly in creating solutions and acted as the technical lead in designing architectures of the projects.",
+      tags: [".NET", ".NET Core", "Node.js", "React", "AWS"],
+      logo: "/99x.jpg"
+    },
+    {
+      role: "Senior Software Engineer",
+      company: "99X Technology",
+      type: "Full-time",
+      duration: "Jul 2017 - Jan 2019 · 1 yr 7 mos",
+      location: "Sri Lanka",
+      desc: "Involved in multiple projects throughout the full life cycle. Played the scrum master role, backend lead developer, and managed AWS resources.",
+      tags: ["AWS", ".NET", "Backend", "Scrum Master"],
+      logo: "/99x.jpg"
+    },
+    {
+      role: "Software Engineer",
+      company: "99X Technology",
+      type: "Full-time",
+      duration: "Jan 2016 - Jun 2017 · 1 yr 6 mos",
+      location: "Sri Lanka",
+      desc: "Developed multiple projects, built enterprise level RESTful APIs using best practices, and took ownership of critical modules and CI/CD pipelines.",
+      tags: [".NET", "Node.js", "AngularJS", "Angular", "CI/CD"],
+      logo: "/99x.jpg"
+    }
+  ];
+
   return (
     <div className={styles.page}>
       {/* Hero Section */}
@@ -107,7 +180,7 @@ export default function Home() {
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
-            viewport={{ once: true, margin: "-100px" }} 
+            viewport={{ once: true }} 
             variants={staggerContainer}
           >
             <motion.h2 variants={fadeInUp} className={styles.sectionTitle}>
@@ -115,19 +188,34 @@ export default function Home() {
             </motion.h2>
             
             <div className={styles.timeline}>
-              <motion.div variants={fadeInUp} className={`glass-panel ${styles.timelineItem}`}>
-                <div className={styles.timelineDot}></div>
-                <h3>Senior Fullstack Engineer</h3>
-                <span className={styles.timelineDate}>2022 - Present</span>
-                <p>Architecting and developing modern web applications, leading technical decisions, and mentoring junior developers.</p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className={`glass-panel ${styles.timelineItem}`}>
-                <div className={styles.timelineDot}></div>
-                <h3>Software Engineer</h3>
-                <span className={styles.timelineDate}>2019 - 2022</span>
-                <p>Developed robust backend services and interactive frontend interfaces using React and Node.js.</p>
-              </motion.div>
+              {experiences.map((exp, i) => (
+                <motion.div key={i} variants={fadeInUp} className={`glass-panel ${styles.timelineItem}`}>
+                  <div className={styles.timelineDot}></div>
+                  <div className={styles.timelineContent}>
+                    {exp.logo && (
+                      <div className={styles.logoWrapper}>
+                        <img src={exp.logo} alt={`${exp.company} Logo`} className={styles.companyLogo} />
+                      </div>
+                    )}
+                    <div className={styles.timelineBody}>
+                      <div className={styles.timelineHeader}>
+                        <h3>{exp.role}</h3>
+                        <span className={styles.timelineCompany}>{exp.company} {exp.type && `· ${exp.type}`}</span>
+                      </div>
+                      <div className={styles.timelineMeta}>
+                        <span className={styles.timelineDate}>{exp.duration}</span>
+                        {exp.location && <span className={styles.timelineLocation}> · {exp.location}</span>}
+                      </div>
+                      <p className={styles.timelineDesc}>{exp.desc}</p>
+                      <div className={styles.timelineTags}>
+                        {exp.tags.map((tag, j) => (
+                          <span key={j} className={styles.timelineTag}>{tag}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -139,7 +227,7 @@ export default function Home() {
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
-            viewport={{ once: true, margin: "-100px" }} 
+            viewport={{ once: true }} 
             variants={staggerContainer}
           >
             <motion.h2 variants={fadeInUp} className={styles.sectionTitle}>
@@ -197,7 +285,7 @@ export default function Home() {
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
-            viewport={{ once: true, margin: "-100px" }} 
+            viewport={{ once: true }} 
             variants={staggerContainer}
           >
             <motion.h2 variants={fadeInUp} className={styles.sectionTitle}>
